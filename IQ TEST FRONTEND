@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IQ Test</title>
+
+<style>
+
+/* Animated Black-Gold Background */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #000, #111, #000, #222);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Gold Glow */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(70px);
+  animation: float 9s infinite ease-in-out;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.orb1 { width: 260px; height: 260px; background: #ffbf00; top: 8%; left: 8%; }
+.orb2 { width: 220px; height: 220px; background: #ffd700; bottom: 10%; right: 10%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-40px); }
+}
+
+/* Main Card */
+.container {
+  width: 90%;
+  max-width: 480px;
+  padding: 30px;
+  border-radius: 25px;
+  background: rgba(255,212,0,0.05);
+  border: 1px solid rgba(255,215,0,0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 35px rgba(255,215,0,0.25);
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+.title {
+  font-size: 2.4rem;
+  color: #ffd700;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255,215,0,0.4);
+}
+
+/* Subtitle */
+.desc {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 1.15rem;
+  opacity: 0.85;
+}
+
+/* OPTIONS STYLE */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.option-card {
+  background: rgba(255,215,0,0.08);
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,215,0,0.25);
+  box-shadow: 0 0 15px rgba(255,215,0,0.15);
+  text-align: left;
+}
+
+.option-card h3 {
+  color: #ffd700;
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.option-card select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(30,30,30,0.9);
+  color: #ffd700;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+/* Start Button */
+.start-btn {
+  padding: 15px 50px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #000;
+  background: linear-gradient(45deg, #ffd700, #ffbf00);
+  box-shadow: 0 0 20px rgba(255,215,0,0.6);
+  transition: 0.3s ease;
+}
+
+.start-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 40px rgba(255,215,0,0.9);
+}
+
+.start-btn:active {
+  transform: scale(0.95);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Glowing Orbs -->
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<!-- Main Box -->
+<div class="container">
+
+  <h2 class="title">IQ Test for You</h2>
+
+  <p class="desc">Choose your preferences before starting the test ↓</p>
+
+  <!-- OPTIONS SECTION -->
+  <div class="options">
+
+    <div class="option-card">
+      <h3>Difficulty</h3>
+      <select>
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+      </select>
+    </div>
+
+    <div class="option-card">
+      <h3>Test Type</h3>
+      <select>
+        <option>Logical Reasoning</option>
+        <option>Memory</option>
+        <option>Pattern Solving</option>
+        <option>Mixed (Recommended)</option>
+      </select>
+    </div>
+
+    <div class="option-card">
+      <h3>Time Mode</h3>
+      <select>
+        <option>Timed (10 mins)</option>
+        <option>Timed (20 mins)</option>
+        <option>Untimed</option>
+      </select>
+    </div>
+
+  </div>
+
+  <button class="start-btn" onclick="window.location.href='test.html'">
+    Start Your Journey →
+  </button>
+
+</div>
+
+</body>
+</html>
